@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "DOCX to Google AI Studio",
+  "version": "1.0.0",
+  "description": "拖拽 Word (.docx) 文件到 Google AI Studio，自动转换为 Markdown 上传。支持提取图片。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "host_permissions": [
+    "https://aistudio.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://aistudio.google.com/*"],
+      "js": [
+        "lib/jszip.min.js",
+        "lib/mammoth.browser.min.js",
+        "lib/turndown.min.js",
+        "lib/turndown-plugin-gfm.min.js",
+        "content.js"
+      ],
+      "css": ["dialog.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": ["https://aistudio.google.com/*"],
+      "js": ["inject.js"],
+      "run_at": "document_idle",
+      "world": "MAIN",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["https://aistudio.google.com/*"]
+    }
+  ]
+}
