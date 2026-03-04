@@ -5,6 +5,7 @@
   "description": "拖拽 Word (.docx) 文件到 Google AI Studio，自动转换为 Markdown 上传。支持提取图片。",
   "icons": {
     "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },

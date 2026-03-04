@@ -22,7 +22,7 @@ Chrome / Edge 浏览器扩展，让你可以直接拖拽 Word (.docx) 文件到 
 2. 打开 Chrome 或 Edge 浏览器，进入扩展管理页面：
    - Chrome: `chrome://extensions/`
    - Edge: `edge://extensions/`
-3. 开启右上角的「开发者模式」
+3. 开启的「开发者模式」
 4. 点击「加载已解压的扩展程序」
 5. 选择本项目根目录（包含 `manifest.json` 的文件夹）
 6. 扩展图标将出现在浏览器工具栏
@@ -68,12 +68,12 @@ content.js 捕获阶段拦截 drop 事件
 读取文件 ArrayBuffer
         ↓
   ┌─────────────┐    ┌─────────────┐
-  │ mammoth.js   │    │   JSZip      │
-  │ docx → HTML  │    │ 提取图片     │
+  │ mammoth.js  │    │   JSZip     │
+  │ docx → HTML │    │  提取图片    │
   └──────┬──────┘    └──────┬──────┘
-         ↓                   ↓
-  Turndown: HTML → MD        ↓
-         ↓                   ↓
+         ↓                  ↓
+  Turndown: HTML → MD       ↓
+         ↓                  ↓
     ┌────┴──── 图片数量 ─────┘
     │
     ├─ 0 张 → 直接上传 .md
